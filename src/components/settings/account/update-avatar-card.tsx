@@ -77,6 +77,14 @@ export function UpdateAvatarCard({
         try {
             await updateUser({ image })
             await refetch?.()
+            // If a custom storage remover is provided, clean up the old asset
+            if (avatar.upload && avatar.delete && sessionData.user.image) {
+                try {
+                    await avatar.delete(sessionData.user.image)
+                } catch (error) {
+                    console.error("Failed to delete old avatar:", error)
+                }
+            }
         } catch (error) {
             toast({
                 variant: "error",
