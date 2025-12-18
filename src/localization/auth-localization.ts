@@ -115,6 +115,9 @@ export const authLocalization = {
     /** @default "Current Session" */
     CURRENT_SESSION: "Current Session",
 
+    /** @default "Update" */
+    UPDATE: "Update",
+
     /** @default "Delete" */
     DELETE: "Delete",
 
@@ -733,6 +736,19 @@ export const authLocalization = {
 
     /** @default "Team created successfully" */
     CREATE_TEAM_SUCCESS: "Team created successfully",
+
+    /** @default "Update Team" */
+    UPDATE_TEAM: "Update Team",
+
+    /** @default "Update the name for this team" */
+    UPDATE_TEAM_DESCRIPTION: "Update the name for this team",
+
+    /** @default "Are you sure you want to remove this team from the organization?" */
+    REMOVE_TEAM_CONFIRM:
+        "Are you sure you want to remove this team from the organization?",
+
+    /** @default "Add new team to your organization." */
+    CREATE_TEAM_INSTRUCTIONS: "Add new team to your organization.",
 
     /** @default "Team Name" */
     TEAM_NAME: "Team Name",

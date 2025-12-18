@@ -9,6 +9,7 @@ import * as z from "zod"
 import { AuthUIContext } from "../../lib/auth-ui-provider"
 import { cn, getLocalizedError } from "../../lib/utils"
 import type { AuthLocalization } from "../../localization/auth-localization"
+import type { Refetch } from "../../types/refetch"
 import type { SettingsCardClassNames } from "../settings/shared/settings-card"
 import { Button } from "../ui/button"
 import {
@@ -32,6 +33,7 @@ import { Input } from "../ui/input"
 export interface CreateTeamDialogProps extends ComponentProps<typeof Dialog> {
     classNames?: SettingsCardClassNames
     localization?: AuthLocalization
+    refetch?: Refetch
     organizationId?: string
 }
 
@@ -48,6 +50,7 @@ export interface CreateTeamDialogProps extends ComponentProps<typeof Dialog> {
 export function CreateTeamDialog({
     classNames,
     localization: localizationProp,
+    refetch,
     organizationId,
     onOpenChange,
     ...props
@@ -88,15 +91,13 @@ export function CreateTeamDialog({
         if (!organizationId) return
 
         try {
-            await authClient.$fetch("/organization/create-team", {
-                method: "POST",
-                body: {
-                    name,
-                    organizationId
-                },
-                throw: true
+            await authClient.organization.createTeam({
+                name,
+                organizationId,
+                fetchOptions: { throw: true }
             })
 
+            await refetch?.()
             onOpenChange?.(false)
             form.reset()
 
