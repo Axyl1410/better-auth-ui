@@ -158,6 +158,6 @@
         "ua-parser-js": "^2.0.7",
         "vaul": "^1.1.2"
     },
-    "packageManager": "pnpm@10.26.0",
+    "packageManager": "pnpm@10.26.2",
     "overrides": {}
 }
