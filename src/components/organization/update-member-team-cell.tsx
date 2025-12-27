@@ -36,7 +36,6 @@ export function UpdateMemberTeamCell({
         toast,
         localizeErrors
     } = useContext(AuthUIContext)
-    console.log({ userId, team, added })
 
     localization = { ...contextLocalization, ...localization }
 
