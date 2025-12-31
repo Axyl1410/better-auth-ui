@@ -6,7 +6,6 @@ import { useContext, useState } from "react"
 import { AuthUIContext } from "../../lib/auth-ui-provider"
 import { cn, getLocalizedError } from "../../lib/utils"
 import type { AuthLocalization } from "../../localization/auth-localization"
-import { authClient } from "../../types/auth-client"
 import type { Refetch } from "../../types/refetch"
 import type { SettingsCardClassNames } from "../settings/shared/settings-card"
 import { Button } from "../ui/button"
@@ -32,6 +31,7 @@ export function UpdateMemberTeamCell({
     refetch
 }: UpdateMemberTeamCellProps) {
     const {
+        authClient,
         localization: contextLocalization,
         toast,
         localizeErrors

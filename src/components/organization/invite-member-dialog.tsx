@@ -263,8 +263,11 @@ export function InviteMemberDialog({
                                             >
                                                 <FormControl>
                                                     <SelectTrigger>
-                                                        <SelectValue />
-                                                        <SelectValue placeholder="Select team" />
+                                                        <SelectValue
+                                                            placeholder={
+                                                                localization.SELECT_TEAMS
+                                                            }
+                                                        />
                                                     </SelectTrigger>
                                                 </FormControl>
 
