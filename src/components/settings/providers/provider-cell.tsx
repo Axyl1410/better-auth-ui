@@ -205,9 +205,7 @@ function ConnectedProviderContent({
             <Tooltip>
                 <TooltipTrigger asChild>
                     <div
-                        className="flex min-w-0 flex-1 items-center gap-3 cursor-default"
-                        tabIndex={0}
-                        role="button"
+                        className="flex min-w-0 flex-1 cursor-default items-center gap-3"
                     >
                         {content}
                     </div>
@@ -241,7 +239,7 @@ function ProviderContent({
                 <provider.icon className={cn("size-4 shrink-0", classNames?.icon)} />
             )}
 
-            <div className="min-w-0 flex-col">
+            <div className="flex min-w-0 flex-col">
                 <div className="text-sm">{provider.name}</div>
                 {accountInfo}
             </div>
